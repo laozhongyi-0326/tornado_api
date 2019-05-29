@@ -21,7 +21,6 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
-from test import ScreenCaptureHandler
 from upload_file import UpFileHandler
 from post_qingqiu import FileHandler
 from get_xiyou import Xiyou
@@ -31,7 +30,6 @@ from get_xiyou import Xiyou
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
-            (r'/test', ScreenCaptureHandler),
             (r'/xiyou', Xiyou),
             ((r'/mp4_to_mp3',UpFileHandler)),
             ((r'/post_method',FileHandler)),
