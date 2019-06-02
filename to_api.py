@@ -24,6 +24,8 @@ import tornado.web
 from upload_file import UpFileHandler
 from post_qingqiu import FileHandler
 from get_xiyou import Xiyou
+from get_douyin_url import DownUrl
+from video_recording import VideoRecording
 
 
 
@@ -33,7 +35,8 @@ class Application(tornado.web.Application):
             (r'/xiyou', Xiyou),
             ((r'/mp4_to_mp3',UpFileHandler)),
             ((r'/post_method',FileHandler)),
-            # ((r'/fileup',UpFileHandler)),
+            ((r'/DownUrl',DownUrl)),
+            ((r'/videorecording', VideoRecording)),
         ]
         tornado.web.Application.__init__(self, handlers)
 
